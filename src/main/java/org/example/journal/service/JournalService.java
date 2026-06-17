@@ -16,25 +16,25 @@ public class JournalService {
     }
     public void saveEntry(JournalEntry entry)
     {
-        journalEntries.put(entry.getId(),entry);
+        journalRepository.saveData(entry);
     }
 
-    public Map<Long, JournalEntry> getAllEntries() {
-        return journalEntries;
-    }
-
-    public JournalEntry showEntryById(Long id)
-    {
-        return journalEntries.get(id);
-    }
-
-    public void updateEntry(Long id , JournalEntry entry)
-    {
-        journalEntries.put(id,entry);
-    }
-
-    public void deleteEntry(Long id)
-    {
-        journalEntries.remove(id);
-    }
+//    public Map<Long, JournalEntry> getAllEntries() {
+////        return journalEntries;
+//    }
+//
+//    public JournalEntry showEntryById(Long id)
+//    {
+////        return journalEntries.get(id);
+//    }
+//
+//    public void updateEntry(Long id , JournalEntry entry)
+//    {
+////        journalEntries.put(id,entry);
+//    }
+//
+//    public void deleteEntry(Long id)
+//    {
+////        journalEntries.remove(id);
+//    }
 }

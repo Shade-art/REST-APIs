@@ -10,4 +10,12 @@ import java.util.Map;
 public class JournalRepository {
     private final Map<Long, JournalEntry> journalEntries = new HashMap<>();
 
+
+    public void saveData(JournalEntry entry)
+    {
+        journalEntries.put(entry.getId(),entry);
+    }
+
+
+
 }
