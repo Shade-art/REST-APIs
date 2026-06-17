@@ -1,6 +1,6 @@
 # Journal App REST API
 
-A simple Spring Boot REST API for managing journal entries.
+A simple Spring Boot REST API for managing journal entries and learning backend development fundamentals.
 
 ## Tech Stack
 
@@ -15,23 +15,27 @@ A simple Spring Boot REST API for managing journal entries.
 ```text
 Postman
    ↓
-Controller
+JournalController
    ↓
-Service
+JournalService
    ↓
-HashMap
+JournalRepository
+   ↓
+HashMap (In-Memory Storage)
 ```
 
 ## Features
 
 * Create Journal Entry
-* Get All Entries
-* Get Entry By ID
-* Update Entry
-* Delete Entry
+* Get All Journal Entries
+* Get Journal Entry By ID
+* Update Journal Entry
+* Delete Journal Entry
+* Layered Architecture (Controller → Service → Repository)
+* Constructor-Based Dependency Injection
 * 404 Response for Missing Entries
 
-## Endpoints
+## REST Endpoints
 
 ```http
 POST    /journal
@@ -41,27 +45,38 @@ PUT     /journal/{id}
 DELETE  /journal/{id}
 ```
 
-## Concepts Learned
+## Concepts Practiced
 
-* REST APIs
+* REST API Design
 * CRUD Operations
+* Spring Boot Fundamentals
 * @RestController
 * @RequestMapping
-* @GetMapping / @PostMapping
-* @PutMapping / @DeleteMapping
+* @GetMapping
+* @PostMapping
+* @PutMapping
+* @DeleteMapping
 * @PathVariable
 * @RequestBody
 * ResponseEntity
 * @Service
+* @Repository
 * Dependency Injection
 * Constructor Injection
+* Spring Beans
+* Repository Pattern
 * Layered Architecture
 
-## Next Steps
+## Future Improvements
 
-* Repository Layer
 * Spring Data JPA
-* MySQL
-* Validation
-* Exception Handling
-* Spring Security & JWT
+* MySQL / PostgreSQL Integration
+* Bean Validation
+* Global Exception Handling
+* Lombok
+* Spring Security
+* JWT Authentication
+* Unit & Integration Testing
+
+```
+```
