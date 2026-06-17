@@ -29,12 +29,12 @@ public class JournalController {
     {
         return journalService.getAllEntries();
     }
-//
-//    @GetMapping("/{id}")
-//    public JournalEntry getEntryById(@PathVariable Long id)
-//    {
-//        return journalService.showEntryById(id);
-//    }
+
+    @GetMapping("/{id}")
+    public JournalEntry getEntryById(@PathVariable Long id)
+    {
+        return journalService.showEntryById(id);
+    }
 //
 //    @PutMapping("/{id}")
 //    public boolean updateEntry(@PathVariable Long id , @RequestBody JournalEntry entry)

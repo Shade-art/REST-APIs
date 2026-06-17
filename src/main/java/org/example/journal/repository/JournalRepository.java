@@ -21,4 +21,11 @@ public class JournalRepository {
         return journalEntries;
     }
 
+    public JournalEntry findByid(Long id)
+    {
+        return journalEntries.get(id);
+    }
+
+
+
 }

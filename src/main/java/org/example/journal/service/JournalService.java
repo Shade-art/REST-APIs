@@ -23,11 +23,11 @@ public class JournalService {
     public Map<Long, JournalEntry> getAllEntries() {
         return journalRepository.findAll();
     }
-//
-//    public JournalEntry showEntryById(Long id)
-//    {
-////        return journalEntries.get(id);
-//    }
+
+    public JournalEntry showEntryById(Long id)
+    {
+        return journalRepository.findByid(id);
+    }
 //
 //    public void updateEntry(Long id , JournalEntry entry)
 //    {
