@@ -1,6 +1,7 @@
 package org.example.journal.service;
 
 import org.example.journal.model.JournalEntry;
+import org.example.journal.repository.JournalRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -8,9 +9,11 @@ import java.util.Map;
 
 @Service
 public class JournalService {
-    private Map<Long, JournalEntry> journalEntries =
-            new HashMap<>();
-
+    JournalRepository journalRepository;
+    public JournalService (JournalRepository journalRepository)
+    {
+        this.journalRepository = journalRepository;
+    }
     public void saveEntry(JournalEntry entry)
     {
         journalEntries.put(entry.getId(),entry);
