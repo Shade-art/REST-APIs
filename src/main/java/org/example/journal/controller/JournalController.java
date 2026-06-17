@@ -2,6 +2,7 @@ package org.example.journal.controller;
 
 
 import org.example.journal.model.JournalEntry;
+import org.example.journal.repository.JournalRepository;
 import org.example.journal.service.JournalService;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,11 +24,11 @@ public class JournalController {
         return true;
     }
 
-//    @GetMapping
-//    public Map<Long, JournalEntry> getAllEntries()
-//    {
-//        return journalService.getAllEntries();
-//    }
+    @GetMapping
+    public Map<Long, JournalEntry> getAllEntries()
+    {
+        return journalService.getAllEntries();
+    }
 //
 //    @GetMapping("/{id}")
 //    public JournalEntry getEntryById(@PathVariable Long id)

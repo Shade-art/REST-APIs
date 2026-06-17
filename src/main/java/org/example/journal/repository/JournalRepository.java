@@ -16,6 +16,9 @@ public class JournalRepository {
         journalEntries.put(entry.getId(),entry);
     }
 
-
+    public Map<Long,JournalEntry> findAll()
+    {
+        return journalEntries;
+    }
 
 }

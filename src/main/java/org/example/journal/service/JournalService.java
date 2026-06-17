@@ -19,9 +19,10 @@ public class JournalService {
         journalRepository.saveData(entry);
     }
 
-//    public Map<Long, JournalEntry> getAllEntries() {
-////        return journalEntries;
-//    }
+
+    public Map<Long, JournalEntry> getAllEntries() {
+        return journalRepository.findAll();
+    }
 //
 //    public JournalEntry showEntryById(Long id)
 //    {
