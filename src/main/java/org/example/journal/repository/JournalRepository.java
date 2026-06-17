@@ -26,6 +26,18 @@ public class JournalRepository {
         return journalEntries.get(id);
     }
 
+    public boolean edit(Long id,JournalEntry entry)
+    {
+        journalEntries.put(entry.getId(),entry);
+        return true;
+    }
+
+    public boolean delete(Long id)
+    {
+        journalEntries.remove(id);
+        return true;
+    }
+
 
 
 }

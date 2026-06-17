@@ -35,18 +35,18 @@ public class JournalController {
     {
         return journalService.showEntryById(id);
     }
-//
-//    @PutMapping("/{id}")
-//    public boolean updateEntry(@PathVariable Long id , @RequestBody JournalEntry entry)
-//    {
-//        journalService.updateEntry(id,entry);
-//        return true;
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public boolean deleteEntry(@PathVariable Long id)
-//    {
-//        journalService.deleteEntry(id);
-//        return true;
-//    }
+
+    @PutMapping("/{id}")
+    public boolean updateEntry(@PathVariable Long id , @RequestBody JournalEntry entry)
+    {
+        journalService.updateEntry(id,entry);
+        return true;
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean deleteEntry(@PathVariable Long id)
+    {
+        journalService.deleteEntry(id);
+        return true;
+    }
 }

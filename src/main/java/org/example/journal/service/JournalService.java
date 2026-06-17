@@ -10,12 +10,12 @@ import java.util.Map;
 @Service
 public class JournalService {
     JournalRepository journalRepository;
-    public JournalService (JournalRepository journalRepository)
-    {
+
+    public JournalService(JournalRepository journalRepository) {
         this.journalRepository = journalRepository;
     }
-    public void saveEntry(JournalEntry entry)
-    {
+
+    public void saveEntry(JournalEntry entry) {
         journalRepository.saveData(entry);
     }
 
@@ -24,18 +24,16 @@ public class JournalService {
         return journalRepository.findAll();
     }
 
-    public JournalEntry showEntryById(Long id)
-    {
+    public JournalEntry showEntryById(Long id) {
         return journalRepository.findByid(id);
     }
-//
-//    public void updateEntry(Long id , JournalEntry entry)
-//    {
-////        journalEntries.put(id,entry);
-//    }
-//
-//    public void deleteEntry(Long id)
-//    {
-////        journalEntries.remove(id);
-//    }
+
+    public void updateEntry(Long id, JournalEntry entry) {
+        journalRepository.edit(id, entry);
+    }
+
+    public void deleteEntry(Long id)
+    {
+        journalRepository.delete(id);
+    }
 }
