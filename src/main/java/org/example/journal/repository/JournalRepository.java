@@ -21,7 +21,7 @@ public class JournalRepository {
         return journalEntries;
     }
 
-    public JournalEntry findByid(Long id)
+    public JournalEntry findById(Long id)
     {
         return journalEntries.get(id);
     }

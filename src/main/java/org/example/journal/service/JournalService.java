@@ -1,5 +1,6 @@
 package org.example.journal.service;
 
+import org.example.journal.exception.JournalEntryNotFoundException;
 import org.example.journal.model.JournalEntry;
 import org.example.journal.repository.JournalRepository;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,12 @@ public class JournalService {
         return journalRepository.findAll();
     }
 
-    public JournalEntry showEntryById(Long id) {
-        return journalRepository.findByid(id);
+    public JournalEntry showEntryById(Long id)
+    {
+        JournalEntry entry = journalRepository.findById(id);
+        if(entry == null)
+            throw new JournalEntryNotFoundException("Entry not found with id : "+ id);
+        return entry;
     }
 
     public void updateEntry(Long id, JournalEntry entry) {
