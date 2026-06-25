@@ -1,11 +1,12 @@
 package org.example.journal.controller;
 
 
+import org.example.journal.dto.JournalEntryRequestDTO;
 import org.example.journal.model.JournalEntry;
-import org.example.journal.repository.JournalRepository;
 import org.example.journal.service.JournalService;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.Map;
 
 @RestController
@@ -18,10 +19,19 @@ public class JournalController {
     }
 
     @PostMapping
-    public boolean createEntry(@RequestBody JournalEntry entry)
+    public String createEntry(@RequestBody JournalEntryRequestDTO dto)
     {
+        //creating object of entry
+        JournalEntry entry = new JournalEntry();
+
+        //adding all things to entry
+        entry.setId(System.currentTimeMillis()); //from us
+        entry.setTitle(dto.getTitle()); //from user
+        entry.setContent(dto.getContent());//from user
+        entry.setCreatedAt(String.valueOf(LocalDateTime.now()));//from us
+
         journalService.saveEntry(entry);
-        return true;
+        return "Entry has been saved";
     }
 
     @GetMapping

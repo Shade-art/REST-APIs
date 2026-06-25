@@ -4,16 +4,26 @@ public class JournalEntry {
     private long id;
     private String title;
     private String content;
+    private String createdAt;
 
     public JournalEntry(){
 
+    }
+
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
