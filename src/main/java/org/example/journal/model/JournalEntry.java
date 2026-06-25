@@ -1,5 +1,8 @@
 package org.example.journal.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class JournalEntry {
     private long id;
     private String title;
